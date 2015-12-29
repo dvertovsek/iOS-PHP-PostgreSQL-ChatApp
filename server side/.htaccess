@@ -1,0 +1,5 @@
+#DirectoryIndex users.php
+
+RewriteEngine on
+RewriteRule users users.php
+RewriteRule requests requestAPI.php

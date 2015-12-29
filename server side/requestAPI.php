@@ -56,15 +56,13 @@
 
         $stmt->execute();
 
-        // $ret_message = "";
-        switch htmlspecialchars_decode($_POST["isAccepted"])
+        $ret_message = "";
+        if ($_POST["isAccepted"] == "false")
         {
-          case true:
-            $ret_message = "You accepted friend request!";
-            break;
-          case false:
-            $ret_message = "You denied friend request!";
-            break;
+          $ret_message = "You denied friend request!";
+        }
+        else {
+          $ret_message = "You accepted friend request!";
         }
         $JSONresult = array("errNo" => $ret_message);
         break;

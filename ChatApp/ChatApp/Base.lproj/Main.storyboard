@@ -31,15 +31,19 @@
                                     <action selector="uploadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5sU-H0-hnA"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsb-yH-j82">
-                                <rect key="frame" x="33" y="180" width="276" height="204"/>
-                            </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-3B-Fff">
                                 <rect key="frame" x="149" y="146" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsb-yH-j82">
+                                <rect key="frame" x="33" y="180" width="276" height="204"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="myActivityIndicator" destination="Dmo-3B-Fff" id="0UF-5B-Oz7"/>
+                        <outlet property="myImageView" destination="zsb-yH-j82" id="Jhg-Za-gme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

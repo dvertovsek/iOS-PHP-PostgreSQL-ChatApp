@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS chatapp.users(
   password VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
   on_line BOOLEAN NOT NULL DEFAULT false,
+  imgUrl TEXT NOT NULL DEFAULT 'https://chat-dare1234.rhcloud.com/uploads/plain_user.png',
   user_status_id INT REFERENCES chatapp.user_status,
   user_type_id INT REFERENCES chatapp.user_type
 );
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS chatapp.messages(
   user_id_to INT NOT NULL REFERENCES chatapp.users,
   message_text TEXT NOT NULL,
   is_public BOOLEAN NOT NULL DEFAULT false,
-  time_sent TIMESTAMP DEFAULT NOW()
+  time_sent TIMESTAMP DEFAULT chatapp.gettime()
 );
 
 CREATE TABLE IF NOT EXISTS chatapp.requests(
@@ -68,5 +69,5 @@ CREATE TABLE IF NOT EXISTS chatapp.relationship(
 CREATE TABLE IF NOT EXISTS chatapp.log(
   user_id INT NOT NULL REFERENCES chatapp.users,
   description TEXT NOT NULL,
-  log_time TIMESTAMP DEFAULT NOW()
+  log_time TIMESTAMP DEFAULT chatapp.gettime()
 );

@@ -3,7 +3,7 @@
   if(isset($_POST["method"]))
   {
     include 'dbPDOController.php';
-  
+
     $dbh = Db::getDBInstance();
 
     $JSONresult = array();

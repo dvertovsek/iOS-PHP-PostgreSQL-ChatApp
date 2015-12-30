@@ -4,3 +4,5 @@ RewriteEngine on
 RewriteRule users users.php
 RewriteRule requests requestAPI.php
 RewriteRule messages messagesAPI.php
+RewriteRule uploadImg uploadImg.php
+RewriteRule login login.php

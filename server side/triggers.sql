@@ -57,7 +57,7 @@ IF NEW.user_id_to = (SELECT user_id FROM chatapp.users WHERE username = 'admin')
                                 '''help''- application help\n';
     WHEN 'info' THEN message := 'ChatApp, all rights reserved (C) 2015, Database Theory, Darijan Vertovsek';
     WHEN 'help' THEN message := 'OVO JOS TRIBA ZITISLO kad se ISPROGRAMIRA APP';
-    ELSE message := 'Unknown option. Type ''option'' for option list.';
+    ELSE message := 'Unknown option. Type ''options'' for option list.';
   END CASE;
 END IF;
 
@@ -85,22 +85,38 @@ recordUsers chatapp.users%ROWTYPE;
 
 BEGIN
 
-SELECT * INTO recordRel FROM chatapp.relationship WHERE user_1 = NEW.user_id_from OR user_1 = NEW.user_id_to AND user_2 = NEW.user_id_from OR user_2 = NEW.user_id_to;
-IF NOT FOUND AND NEW.user_id_from != (SELECT user_id FROM chatapp.users WHERE username = 'admin') AND NEW.user_id_to != (SELECT user_id FROM chatapp.users WHERE username = 'admin') THEN
-  RAISE EXCEPTION 'Message cannot be sent!' USING DETAIL = 'Users are not friends!';
+IF NEW.user_id_from != (SELECT user_id FROM chatapp.users WHERE username = 'admin') AND NEW.user_id_to != (SELECT user_id FROM chatapp.users WHERE username = 'admin') THEN
+
+  SELECT * INTO recordRel FROM chatapp.relationship WHERE (user_1 = NEW.user_id_from OR user_1 = NEW.user_id_to) AND (user_2 = NEW.user_id_from OR user_2 = NEW.user_id_to);
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'Message cannot be sent!' USING DETAIL = 'Users are not friends!';
+  END IF;
+
 END IF;
 
 recordRel := NULL;
 
-SELECT * INTO recordRel FROM chatapp.relationship WHERE user_1 = NEW.user_id_from OR user_1 = NEW.user_id_to AND user_2 = NEW.user_id_from OR user_2 = NEW.user_id_to AND user1_blocked_user2 = TRUE;
+SELECT * INTO recordRel FROM chatapp.relationship WHERE (user_1 = NEW.user_id_from OR user_1 = NEW.user_id_to) AND (user_2 = NEW.user_id_from OR user_2 = NEW.user_id_to) AND user1_blocked_user2 = TRUE;
 IF FOUND THEN
   RAISE EXCEPTION 'Message cannot be sent!' USING DETAIL = 'Users are blocked!';
 END IF;
 
---
--- TO DO:
--- ADD PUBLIC MESSSAGE SENT TRIGGER
---
+IF NEW.is_public = true AND NEW.user_id_from != NEW.user_id_to THEN
+
+  RAISE NOTICE 'public message, different users!';
+
+  IF NEW.user_id_to = 1 THEN
+    RAISE EXCEPTION 'You cant write on admin''s wall!';
+  END IF;
+
+  recordRel := NULL;
+  SELECT * INTO recordRel FROM chatapp.relationship WHERE (user_1 = NEW.user_id_from OR user_1 = NEW.user_id_to) AND (user_2 = NEW.user_id_from OR user_2 = NEW.user_id_to) AND best_friends = TRUE;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'Public message cannot be sent!' USING DETAIL = 'Users are not best friends!';
+  END IF;
+
+END IF;
 
 SELECT * INTO recordUsers FROM chatapp.users WHERE user_id = NEW.user_id_to AND user_status_id = (SELECT status_id FROM chatapp.user_status WHERE description = 'active');
 IF NOT FOUND THEN

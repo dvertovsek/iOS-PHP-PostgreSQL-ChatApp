@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ws.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>5270C1D61C3408920069147C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52EEDDB51C36AB290071D4D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

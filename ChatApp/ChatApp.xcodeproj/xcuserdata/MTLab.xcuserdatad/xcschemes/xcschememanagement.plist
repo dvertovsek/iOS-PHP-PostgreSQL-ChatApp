@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>core.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>ws.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>52EEDDB51C36AB290071D4D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52EEDDC91C36DFC40071D4D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

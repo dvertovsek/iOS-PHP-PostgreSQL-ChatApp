@@ -22,7 +22,7 @@ public class HTTPRequest
         self.delegate = delegate
     }
     
-    private func httprequest(url: String, params: [String:String])
+    public func httprequest(url: String, params: [String:String])
     {
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in

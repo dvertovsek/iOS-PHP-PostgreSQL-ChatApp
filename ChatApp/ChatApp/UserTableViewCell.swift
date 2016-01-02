@@ -16,17 +16,9 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var last_name: UILabel!
     @IBOutlet weak var location: UILabel!
     
-    @IBOutlet weak var adminPic: UIImageView!
+    @IBOutlet weak var birthdate: UILabel!
+    @IBOutlet weak var email: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var adminPic: UIImageView!
 
 }

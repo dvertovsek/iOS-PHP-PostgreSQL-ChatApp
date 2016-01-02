@@ -30,6 +30,9 @@
 		52EEDDEE1C37D71C0071D4D6 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEDDE71C37D71C0071D4D6 /* data.framework */; };
 		52EEDDEF1C37D71C0071D4D6 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEDDE71C37D71C0071D4D6 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52EEDDF41C37D7320071D4D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDF31C37D7320071D4D6 /* User.swift */; };
+		52EEDDF61C3801190071D4D6 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDF51C3801190071D4D6 /* ProfilePageViewController.swift */; };
+		52EEDDF81C3809300071D4D6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDF71C3809300071D4D6 /* MessageTableViewCell.swift */; };
+		52EEDDFA1C3824940071D4D6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDF91C3824940071D4D6 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		52EEDDE91C37D71C0071D4D6 /* data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
 		52EEDDEB1C37D71C0071D4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52EEDDF31C37D7320071D4D6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		52EEDDF51C3801190071D4D6 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		52EEDDF71C3809300071D4D6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		52EEDDF91C3824940071D4D6 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		58E5D0A01649217AC706BC67 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C5BA0C55D085A716149F36 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F2D39A30E683D7788FDB0F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +176,9 @@
 				52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */,
 				52EEDDDE1C37D2E80071D4D6 /* UserTableViewCell.swift */,
 				52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */,
+				52EEDDF51C3801190071D4D6 /* ProfilePageViewController.swift */,
 				5270C1DE1C3408920069147C /* Main.storyboard */,
+				52EEDDF71C3809300071D4D6 /* MessageTableViewCell.swift */,
 				5270C1E11C3408930069147C /* Assets.xcassets */,
 				5270C1E31C3408930069147C /* LaunchScreen.storyboard */,
 				5270C1E61C3408930069147C /* Info.plist */,
@@ -206,6 +214,7 @@
 				52EEDDE91C37D71C0071D4D6 /* data.h */,
 				52EEDDEB1C37D71C0071D4D6 /* Info.plist */,
 				52EEDDF31C37D7320071D4D6 /* User.swift */,
+				52EEDDF91C3824940071D4D6 /* Message.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -469,11 +478,13 @@
 			files = (
 				52EEDDDB1C36F33C0071D4D6 /* mainMenuViewController.swift in Sources */,
 				52EEDDDD1C3701810071D4D6 /* RegisterViewController.swift in Sources */,
+				52EEDDF81C3809300071D4D6 /* MessageTableViewCell.swift in Sources */,
 				52EEDDD91C36E68E0071D4D6 /* LoginViewController.swift in Sources */,
 				52EEDDE11C37D3250071D4D6 /* UsersViewController.swift in Sources */,
 				5270C1DD1C3408920069147C /* ViewController.swift in Sources */,
 				52EEDDDF1C37D2E80071D4D6 /* UserTableViewCell.swift in Sources */,
 				5270C1DB1C3408920069147C /* AppDelegate.swift in Sources */,
+				52EEDDF61C3801190071D4D6 /* ProfilePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52EEDDF41C37D7320071D4D6 /* User.swift in Sources */,
+				52EEDDFA1C3824940071D4D6 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

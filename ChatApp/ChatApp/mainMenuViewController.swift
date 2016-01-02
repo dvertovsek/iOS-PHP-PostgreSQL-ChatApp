@@ -42,7 +42,7 @@ class mainMenuViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("user_id")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("username")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("imgUrl")
         
         self.performSegueWithIdentifier("loginView", sender: self)
 

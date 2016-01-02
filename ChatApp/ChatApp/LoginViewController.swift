@@ -55,7 +55,6 @@ extension LoginViewController: WebServiceResultDelegate
         if(loginResultInfo["errNo"] != "200")
         {
             let title = "Login error"
-            
             let message = loginResultInfo["errNo"]
             
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -71,7 +70,7 @@ extension LoginViewController: WebServiceResultDelegate
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
             NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["user_id"], forKey: "user_id")
             NSUserDefaults.standardUserDefaults().setValue(usernameTextField.text, forKey: "username")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["imgUrl"], forKey: "imgUrl")
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }

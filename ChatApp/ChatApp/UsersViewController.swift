@@ -18,6 +18,7 @@ class UsersViewController: UITableViewController {
     var usersArray: [User]?
     
     var httpReq: HTTPRequest?
+    var rowSelected: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,20 @@ class UsersViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        rowSelected = indexPath.row
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let destination = segue.destinationViewController as? ProfilePageViewController {
+                if let userIndex = tableView.indexPathForSelectedRow
+                {
+                    destination.user = self.usersArray![userIndex.row]
+                }
+            }
+    }
     
 }
 

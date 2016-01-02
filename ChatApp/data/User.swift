@@ -16,12 +16,14 @@ public class User {
     public var first_name: String
     public var last_name: String
     public var location: String
+    public var email: String
+    public var bdate: String
     
     public var online: Bool
     public var user_status_id: Int
     public var user_type_id: Int
     
-    public init(user_id: Int, imgUrl: String, username: String, first_name: String, last_name: String, location: String, online: Bool, user_status_id: Int, user_type_id: Int)
+    public init(user_id: Int, imgUrl: String, username: String, first_name: String, last_name: String, location: String, email: String, bdate: String , online: Bool, user_status_id: Int, user_type_id: Int)
     {
         self.user_id = user_id
         
@@ -31,6 +33,8 @@ public class User {
         self.first_name = first_name
         self.last_name = last_name
         self.location = location
+        self.email = email
+        self.bdate = bdate
         
         self.online = online
         self.user_status_id = user_status_id

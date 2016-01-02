@@ -24,6 +24,12 @@
 		52EEDDD91C36E68E0071D4D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */; };
 		52EEDDDB1C36F33C0071D4D6 /* mainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDDA1C36F33B0071D4D6 /* mainMenuViewController.swift */; };
 		52EEDDDD1C3701810071D4D6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDDC1C3701810071D4D6 /* RegisterViewController.swift */; };
+		52EEDDDF1C37D2E80071D4D6 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDDE1C37D2E80071D4D6 /* UserTableViewCell.swift */; };
+		52EEDDE11C37D3250071D4D6 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */; };
+		52EEDDEA1C37D71C0071D4D6 /* data.h in Headers */ = {isa = PBXBuildFile; fileRef = 52EEDDE91C37D71C0071D4D6 /* data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52EEDDEE1C37D71C0071D4D6 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEDDE71C37D71C0071D4D6 /* data.framework */; };
+		52EEDDEF1C37D71C0071D4D6 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEDDE71C37D71C0071D4D6 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52EEDDF41C37D7320071D4D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDDF31C37D7320071D4D6 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,13 @@
 			remoteGlobalIDString = 52EEDDC91C36DFC40071D4D6;
 			remoteInfo = core;
 		};
+		52EEDDEC1C37D71C0071D4D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5270C1CF1C3408920069147C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52EEDDE61C37D71C0071D4D6;
+			remoteInfo = data;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +64,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				52EEDDBE1C36AB290071D4D6 /* ws.framework in Embed Frameworks */,
+				52EEDDEF1C37D71C0071D4D6 /* data.framework in Embed Frameworks */,
 				52EEDDD21C36DFC40071D4D6 /* core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -77,6 +91,12 @@
 		52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52EEDDDA1C36F33B0071D4D6 /* mainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainMenuViewController.swift; sourceTree = "<group>"; };
 		52EEDDDC1C3701810071D4D6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		52EEDDDE1C37D2E80071D4D6 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		52EEDDE71C37D71C0071D4D6 /* data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52EEDDE91C37D71C0071D4D6 /* data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
+		52EEDDEB1C37D71C0071D4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52EEDDF31C37D7320071D4D6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		58E5D0A01649217AC706BC67 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C5BA0C55D085A716149F36 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F2D39A30E683D7788FDB0F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EEDDEE1C37D71C0071D4D6 /* data.framework in Frameworks */,
 				52EEDDBD1C36AB290071D4D6 /* ws.framework in Frameworks */,
 				4F15201CD22FBD31ABEB6155 /* Pods.framework in Frameworks */,
 				52EEDDD11C36DFC40071D4D6 /* core.framework in Frameworks */,
@@ -107,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52EEDDE31C37D71C0071D4D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,6 +144,7 @@
 				5270C1D91C3408920069147C /* ChatApp */,
 				52EEDDB71C36AB290071D4D6 /* ws */,
 				52EEDDCB1C36DFC40071D4D6 /* core */,
+				52EEDDE81C37D71C0071D4D6 /* data */,
 				5270C1D81C3408920069147C /* Products */,
 				6BB4F00A8397927692EB05E6 /* Pods */,
 				C9284C2907A913FACC3DDA3D /* Frameworks */,
@@ -128,6 +157,7 @@
 				5270C1D71C3408920069147C /* ChatApp.app */,
 				52EEDDB61C36AB290071D4D6 /* ws.framework */,
 				52EEDDCA1C36DFC40071D4D6 /* core.framework */,
+				52EEDDE71C37D71C0071D4D6 /* data.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +168,8 @@
 				5270C1DA1C3408920069147C /* AppDelegate.swift */,
 				5270C1DC1C3408920069147C /* ViewController.swift */,
 				52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */,
+				52EEDDDE1C37D2E80071D4D6 /* UserTableViewCell.swift */,
+				52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */,
 				5270C1DE1C3408920069147C /* Main.storyboard */,
 				5270C1E11C3408930069147C /* Assets.xcassets */,
 				5270C1E31C3408930069147C /* LaunchScreen.storyboard */,
@@ -168,6 +200,16 @@
 			path = core;
 			sourceTree = "<group>";
 		};
+		52EEDDE81C37D71C0071D4D6 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				52EEDDE91C37D71C0071D4D6 /* data.h */,
+				52EEDDEB1C37D71C0071D4D6 /* Info.plist */,
+				52EEDDF31C37D7320071D4D6 /* User.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		6BB4F00A8397927692EB05E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,12 +234,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EEDDEA1C37D71C0071D4D6 /* data.h in Headers */,
 				52EEDDB91C36AB290071D4D6 /* ws.h in Headers */,
 				52EEDDCD1C36DFC40071D4D6 /* core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52EEDDC71C36DFC40071D4D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52EEDDE41C37D71C0071D4D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,6 +274,7 @@
 			dependencies = (
 				52EEDDBC1C36AB290071D4D6 /* PBXTargetDependency */,
 				52EEDDD01C36DFC40071D4D6 /* PBXTargetDependency */,
+				52EEDDED1C37D71C0071D4D6 /* PBXTargetDependency */,
 			);
 			name = ChatApp;
 			productName = ChatApp;
@@ -266,6 +317,24 @@
 			productReference = 52EEDDCA1C36DFC40071D4D6 /* core.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		52EEDDE61C37D71C0071D4D6 /* data */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52EEDDF01C37D71C0071D4D6 /* Build configuration list for PBXNativeTarget "data" */;
+			buildPhases = (
+				52EEDDE21C37D71C0071D4D6 /* Sources */,
+				52EEDDE31C37D71C0071D4D6 /* Frameworks */,
+				52EEDDE41C37D71C0071D4D6 /* Headers */,
+				52EEDDE51C37D71C0071D4D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = data;
+			productName = data;
+			productReference = 52EEDDE71C37D71C0071D4D6 /* data.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,6 +352,9 @@
 						CreatedOnToolsVersion = 7.2;
 					};
 					52EEDDC91C36DFC40071D4D6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					52EEDDE61C37D71C0071D4D6 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -303,6 +375,7 @@
 				5270C1D61C3408920069147C /* ChatApp */,
 				52EEDDB51C36AB290071D4D6 /* ws */,
 				52EEDDC91C36DFC40071D4D6 /* core */,
+				52EEDDE61C37D71C0071D4D6 /* data */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +399,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52EEDDC81C36DFC40071D4D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52EEDDE51C37D71C0071D4D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -390,7 +470,9 @@
 				52EEDDDB1C36F33C0071D4D6 /* mainMenuViewController.swift in Sources */,
 				52EEDDDD1C3701810071D4D6 /* RegisterViewController.swift in Sources */,
 				52EEDDD91C36E68E0071D4D6 /* LoginViewController.swift in Sources */,
+				52EEDDE11C37D3250071D4D6 /* UsersViewController.swift in Sources */,
 				5270C1DD1C3408920069147C /* ViewController.swift in Sources */,
+				52EEDDDF1C37D2E80071D4D6 /* UserTableViewCell.swift in Sources */,
 				5270C1DB1C3408920069147C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +493,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52EEDDE21C37D71C0071D4D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52EEDDF41C37D7320071D4D6 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -423,6 +513,11 @@
 			isa = PBXTargetDependency;
 			target = 52EEDDC91C36DFC40071D4D6 /* core */;
 			targetProxy = 52EEDDCF1C36DFC40071D4D6 /* PBXContainerItemProxy */;
+		};
+		52EEDDED1C37D71C0071D4D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52EEDDE61C37D71C0071D4D6 /* data */;
+			targetProxy = 52EEDDEC1C37D71C0071D4D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -637,6 +732,47 @@
 			};
 			name = Release;
 		};
+		52EEDDF11C37D71C0071D4D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = data/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tbp.foi.data;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52EEDDF21C37D71C0071D4D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = data/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tbp.foi.data;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -671,6 +807,14 @@
 			buildConfigurations = (
 				52EEDDD41C36DFC40071D4D6 /* Debug */,
 				52EEDDD51C36DFC40071D4D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52EEDDF01C37D71C0071D4D6 /* Build configuration list for PBXNativeTarget "data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52EEDDF11C37D71C0071D4D6 /* Debug */,
+				52EEDDF21C37D71C0071D4D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

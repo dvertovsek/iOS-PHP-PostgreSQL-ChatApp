@@ -28,16 +28,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSignInButtonPressed(sender: UIButton) {
         
-        if let username = usernameTextField.text
+        if usernameTextField.text != "" && passTextField.text != ""
         {
-            if let pass = passTextField.text
-            {
+                let username = usernameTextField.text!
+                let pass = passTextField.text!
+            
                 let loginParams = ["method" : "logIn", "username" : username, "password": pass]
 
                 httpReq?.httprequest("https://chat-dare1234.rhcloud.com/login", params: loginParams)
                 
                 activityIndicator.startAnimating()
-            }
         }
         
     }

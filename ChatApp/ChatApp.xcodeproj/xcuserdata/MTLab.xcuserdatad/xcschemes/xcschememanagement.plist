@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>data.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>ws.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>52EEDDC91C36DFC40071D4D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52EEDDE61C37D71C0071D4D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

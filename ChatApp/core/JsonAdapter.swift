@@ -19,8 +19,16 @@ public class JsonAdapter
         let statusCode = String(json["errNo"])
         let us_id = String(json["user_id"])
         let imgUrl = String(json["imgUrl"])
+        let user_type_id = String(json["user_type_id"])
+        let user_status_id = String(json["user_status_id"])
         
-        return ["errNo":statusCode, "user_id":us_id, "imgUrl":imgUrl]
+        return [
+            "errNo":statusCode,
+            "user_id":us_id,
+            "imgUrl":imgUrl,
+            "user_type_id" : user_type_id,
+            "user_status_id" : user_status_id
+        ]
     }
     
     public static func getUsers(json: AnyObject) -> [User]
@@ -39,8 +47,6 @@ public class JsonAdapter
                 first_name: value["first_name"].string!,
                 last_name: value["last_name"].string!,
                 location: value["location"].string!,
-                email: value["email"].string!,
-                bdate: value["birthdate"].string!,
                 online: value["on_line"].boolValue,
                 user_status_id: value["user_status_id"].int!,
                 user_type_id: value["user_type_id"].int!
@@ -82,8 +88,38 @@ public class JsonAdapter
         let json = JSON(json)
         
         let statusCode = String(json["errNo"])
+        let imgUrl = String(json["imageURL"])
+            
+        print(imgUrl)
+        
+        if imgUrl != ""
+        {
+            return ["errNo":statusCode, "imgUrl" : imgUrl]
+        }
         
         return ["errNo":statusCode]
+    }
+    
+    public static func getLogEntry(json: AnyObject) -> [LogEntry]
+    {
+        let json = JSON(json)
+        
+        var logArray = [LogEntry]()
+        
+        let log = json["log"]
+        
+        for (_, value) in log {
+            
+            let l:LogEntry = LogEntry(
+                imgUrl: value["imgUrl"].string!,
+                username: value["username"].string!,
+                description: value["description"].string!,
+                log_time: value["log_time"].string!
+            )
+            
+            logArray.append(l)
+        }
+        return logArray
     }
     
 }

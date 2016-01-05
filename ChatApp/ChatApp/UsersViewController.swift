@@ -51,9 +51,7 @@ class UsersViewController: UITableViewController {
         cell.userProfilePic.kf_setImageWithURL(NSURL(string:user.imgUrl)!)
 
         cell.username.text = user.username
-        cell.first_name.text = user.first_name
-        cell.last_name.text = user.last_name
-        cell.location.text = user.location
+        cell.first_name.text = user.first_name + " " + user.last_name + ", " + user.location
         
         cell.adminPic.image = (user.user_type_id == 1 ? (UIImage(named: "admin")) : nil )
         

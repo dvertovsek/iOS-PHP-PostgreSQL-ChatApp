@@ -71,6 +71,8 @@ extension LoginViewController: WebServiceResultDelegate
             NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["user_id"], forKey: "user_id")
             NSUserDefaults.standardUserDefaults().setValue(usernameTextField.text, forKey: "username")
             NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["imgUrl"], forKey: "imgUrl")
+            NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["user_type_id"], forKey: "user_type_id")
+            NSUserDefaults.standardUserDefaults().setValue(loginResultInfo["user_status_id"], forKey: "user_status_id")
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }

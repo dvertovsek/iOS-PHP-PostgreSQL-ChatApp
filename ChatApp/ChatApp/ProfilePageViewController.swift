@@ -72,10 +72,11 @@ class ProfilePageViewController: UITableViewController {
             cell.first_name.text = user!.first_name
             cell.last_name.text = user!.last_name
             cell.location.text = user!.location
-            cell.email.text = user!.email
-            cell.birthdate.text = user!.bdate
             
             cell.adminPic.image = (user!.user_type_id == 1 ? (UIImage(named: "admin")) : nil )
+            
+            cell.sendFriendReqButton.addTarget(self, action: "onSendFriendReqButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.messageButton.addTarget(self, action: "onMessageButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
             
             return cell
         }
@@ -106,6 +107,35 @@ class ProfilePageViewController: UITableViewController {
         }
     }
     
+    func onSendFriendReqButtonPressed(sender:UIButton!)
+    {
+        let alert = UIAlertController(title: "Send a friend request", message: "Enter a hello message!", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.text = "Hi! Accept me as friend."
+        })
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Send", style: .Default, handler:
+            { (action) -> Void in
+                
+                let textField = alert.textFields![0] as UITextField
+                print("Text field: \(textField.text)")
+                let params = [
+                    "method" : "sendRequest",
+                    "sender_user_id" : NSUserDefaults.standardUserDefaults().stringForKey("user_id")!,
+                    "user_id" : String((self.user?.user_id)!),
+                    "hello_message" : textField.text!
+                ]
+                self.httpReq?.httprequest("https://chat-dare1234.rhcloud.com/requests", params: params)
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func onMessageButtonPressed(sender:UIButton!)
+    {
+        performSegueWithIdentifier("showMessageView", sender: self)
+    }
+    
     func onSendMessageButtonPressed(sender:UIButton!)
     {
         
@@ -118,7 +148,7 @@ class ProfilePageViewController: UITableViewController {
                 "method" : "sendPublicMessage",
                 "user_id" : String((user?.user_id)!),
                 "sender_user_id" : NSUserDefaults.standardUserDefaults().stringForKey("user_id")!,
-                "message_text" : cell.messageText.text!
+                "message_text" : message_text!
             ]
 
             httpReq?.httprequest("https://chat-dare1234.rhcloud.com/messages", params: params)
@@ -142,7 +172,7 @@ extension ProfilePageViewController: WebServiceResultDelegate
             
             if message != "200"
             {
-                let title = "Message send error"
+                let title = "Notice"
                 
                 let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))

@@ -14,8 +14,11 @@ import data
 
 class MessageTableViewController: UIViewController {
 
-    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var messageTxtField: UITextField!
+    
+    @IBOutlet weak var dockViewHeightConstraint: NSLayoutConstraint!
     
     var private_messages: [Message]?
 
@@ -34,6 +37,9 @@ class MessageTableViewController: UIViewController {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        
         navigationItem.title = "Conversation with " + Userusername!
         httpReq = HTTPRequest(delegate: self)
         
@@ -46,6 +52,23 @@ class MessageTableViewController: UIViewController {
         httpReq?.httprequest("https://chat-dare1234.rhcloud.com/messages", params: params)
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.dockViewHeightConstraint.constant = 400
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.dockViewHeightConstraint.constant = 60
+            self.view.layoutIfNeeded()
+        })
+    }
     
     @IBAction func onSendMessageButtonPressed() {
         
@@ -53,7 +76,7 @@ class MessageTableViewController: UIViewController {
             "method" : "sendPrivateMessage",
             "sender_user_id" : NSUserDefaults.standardUserDefaults().stringForKey("user_id")!,
             "user_id" : Useruser_id!,
-            "message_text" : messageTextField.text!
+            "message_text" : messageTxtField.text!
         ]
         httpReq?.httprequest("https://chat-dare1234.rhcloud.com/messages", params: params)
     }
@@ -86,11 +109,11 @@ extension MessageTableViewController: UITableViewDelegate, UITableViewDataSource
         
         if(priv_message.username == NSUserDefaults.standardUserDefaults().stringForKey("username")!)
         {
-             cell.backgroundView?.backgroundColor = UIColor(red: 125, green: 108, blue: 255, alpha: 1)
+            cell.backgroundColor = UIColor(red: 125/255, green: 108/255, blue: 255/255, alpha: 1)
         }
         else
         {
-             cell.backgroundView?.backgroundColor = UIColor(red: 125, green: 108, blue: 67, alpha: 1)
+             cell.backgroundColor = UIColor.purpleColor()
         }
                 
         return cell
@@ -100,7 +123,22 @@ extension MessageTableViewController: UITableViewDelegate, UITableViewDataSource
 extension MessageTableViewController: WebServiceResultDelegate
 {
     func getResult(result: AnyObject) {
-        private_messages = JsonAdapter.getMessages(result)
-        tableView.reloadData()
+
+        let statusCode = JsonAdapter.getErrorInfo(result)["errNo"]
+        
+        if statusCode != "200"
+        {
+            let title = "Message send error"
+            
+            let alert = UIAlertController(title: title, message: statusCode, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+            
+            presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            private_messages = JsonAdapter.getMessages(result)
+            tableView.reloadData()
+        }
     }
 }

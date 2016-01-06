@@ -507,7 +507,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WeO-W3-3d6">
-                                                    <rect key="frame" x="130" y="0.0" width="185" height="79"/>
+                                                    <rect key="frame" x="130" y="0.0" width="156" height="79"/>
                                                     <color key="backgroundColor" red="0.95106073989999995" green="1" blue="0.82236671189999999" alpha="0.69394003380000002" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" red="0.0" green="0.27615591340000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -543,9 +543,31 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6Q-w0-Zxc" userLabel="DockView">
                                 <rect key="frame" x="20" y="540" width="560" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HL6-oY-OAm">
+                                        <rect key="frame" x="20" y="15" width="382" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfm-He-ZQ2">
+                                        <rect key="frame" x="417" y="15" width="70" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="IpQ-CO-L7G"/>
+                                        </constraints>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="onSendMessageButtonPressed" destination="xhJ-0I-jzo" eventType="touchUpInside" id="KxU-WH-0tr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AZF-ne-Ln2"/>
+                                    <constraint firstItem="gfm-He-ZQ2" firstAttribute="leading" secondItem="HL6-oY-OAm" secondAttribute="trailing" constant="15" id="Gmz-Uh-Qni"/>
+                                    <constraint firstItem="HL6-oY-OAm" firstAttribute="top" secondItem="p6Q-w0-Zxc" secondAttribute="top" constant="15" id="Mi4-x5-OUd"/>
+                                    <constraint firstItem="HL6-oY-OAm" firstAttribute="leading" secondItem="p6Q-w0-Zxc" secondAttribute="leading" constant="20" id="def-ae-6gv"/>
+                                    <constraint firstItem="gfm-He-ZQ2" firstAttribute="top" secondItem="p6Q-w0-Zxc" secondAttribute="top" constant="15" id="rQq-1q-N4O"/>
+                                    <constraint firstAttribute="trailing" secondItem="gfm-He-ZQ2" secondAttribute="trailing" constant="73" id="wUX-Q4-XdA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -571,6 +593,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dockViewHeightConstraint" destination="AZF-ne-Ln2" id="mBr-P0-axd"/>
+                        <outlet property="messageTxtField" destination="HL6-oY-OAm" id="Kke-md-WtQ"/>
                         <outlet property="tableView" destination="nST-ye-oA5" id="r7q-Ed-EjG"/>
                     </connections>
                 </viewController>

@@ -36,6 +36,13 @@ class ProfilePageViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? MessageTableViewController {
+                destination.Useruser_id = String(user!.user_id)
+                destination.Userusername = user!.username
+        }
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }

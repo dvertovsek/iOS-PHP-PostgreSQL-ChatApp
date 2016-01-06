@@ -13,6 +13,7 @@
 		5248E42C1C3B0DAB0070CF56 /* BlockUsersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248E42B1C3B0DAB0070CF56 /* BlockUsersTableView.swift */; };
 		5248E42E1C3BC3AD0070CF56 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248E42D1C3BC3AD0070CF56 /* LogTableViewController.swift */; };
 		5248E4301C3BC5A30070CF56 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248E42F1C3BC5A30070CF56 /* LogEntry.swift */; };
+		5248E4321C3C3ACA0070CF56 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248E4311C3C3ACA0070CF56 /* MessageTableViewController.swift */; };
 		5270C1DB1C3408920069147C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270C1DA1C3408920069147C /* AppDelegate.swift */; };
 		5270C1E01C3408930069147C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5270C1DE1C3408920069147C /* Main.storyboard */; };
 		5270C1E21C3408930069147C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5270C1E11C3408930069147C /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		5248E42B1C3B0DAB0070CF56 /* BlockUsersTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUsersTableView.swift; sourceTree = "<group>"; };
 		5248E42D1C3BC3AD0070CF56 /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		5248E42F1C3BC5A30070CF56 /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		5248E4311C3C3ACA0070CF56 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		5270C1D71C3408920069147C /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5270C1DA1C3408920069147C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5270C1DF1C3408920069147C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,21 +182,22 @@
 			isa = PBXGroup;
 			children = (
 				5270C1DA1C3408920069147C /* AppDelegate.swift */,
-				52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */,
 				52EEDDDE1C37D2E80071D4D6 /* UserTableViewCell.swift */,
-				52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */,
-				52EEDDF51C3801190071D4D6 /* ProfilePageViewController.swift */,
-				5270C1DE1C3408920069147C /* Main.storyboard */,
 				52EEDDF71C3809300071D4D6 /* MessageTableViewCell.swift */,
+				5270C1DE1C3408920069147C /* Main.storyboard */,
 				5270C1E11C3408930069147C /* Assets.xcassets */,
 				5270C1E31C3408930069147C /* LaunchScreen.storyboard */,
 				5270C1E61C3408930069147C /* Info.plist */,
 				52EEDDDA1C36F33B0071D4D6 /* mainMenuViewController.swift */,
+				52EEDDE01C37D3250071D4D6 /* UsersViewController.swift */,
+				52EEDDD81C36E68E0071D4D6 /* LoginViewController.swift */,
+				52EEDDF51C3801190071D4D6 /* ProfilePageViewController.swift */,
 				52EEDDDC1C3701810071D4D6 /* RegisterViewController.swift */,
 				5248E4271C3967D30070CF56 /* RequestViewController.swift */,
 				5248E4291C3A6B6C0070CF56 /* SettingsViewController.swift */,
 				5248E42B1C3B0DAB0070CF56 /* BlockUsersTableView.swift */,
 				5248E42D1C3BC3AD0070CF56 /* LogTableViewController.swift */,
+				5248E4311C3C3ACA0070CF56 /* MessageTableViewController.swift */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				52EEDDDB1C36F33C0071D4D6 /* mainMenuViewController.swift in Sources */,
 				52EEDDDD1C3701810071D4D6 /* RegisterViewController.swift in Sources */,
 				5248E42A1C3A6B6C0070CF56 /* SettingsViewController.swift in Sources */,
+				5248E4321C3C3ACA0070CF56 /* MessageTableViewController.swift in Sources */,
 				5248E4281C3967D30070CF56 /* RequestViewController.swift in Sources */,
 				52EEDDF81C3809300071D4D6 /* MessageTableViewCell.swift in Sources */,
 				52EEDDD91C36E68E0071D4D6 /* LoginViewController.swift in Sources */,

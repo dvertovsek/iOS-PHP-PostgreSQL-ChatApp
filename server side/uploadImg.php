@@ -17,10 +17,10 @@
     $newName = $rootName.$time.'.'.$extension;
 
     // temporarily save file
-    $moved = move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/".$newName );
-    if ($moved) $path = "uploads/".$newName;
-
     $userId = htmlspecialchars_decode($_POST['sender_user_id']);
+
+    $moved = move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/".$userId.".".$extension );
+    if ($moved) $path = "uploads/".$userId.".".$extension;
 
     $time = time();
     if ($moved) {
@@ -38,9 +38,9 @@
 
       $stmt->execute();
 
-      $arrayToSend = array('status'=>'success','time'=>$time,'userId'=>$userId, "imageURL"=>$fullUrl);
+      $arrayToSend = array('errNo'=>'300','time'=>$time,'userId'=>$userId, "imageURL"=>$fullUrl);
     } else {
-      $arrayToSend = array('status'=>'FAILED','time'=>$time,'userId'=>$userId);
+      $arrayToSend = array('errNo'=>'Failed to upload image','time'=>$time,'userId'=>$userId);
     }
 
     header('Content-Type:application/json');

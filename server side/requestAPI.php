@@ -19,17 +19,18 @@
         $stmt->execute();
 
         $errArray = $dbh->errorInfo();
-        if($errArray[2] == "7")
+        if($errArray[1] == "7")
         {
-          $JSONresult = array("errNo" => $errArray[3]);
+          $JSONresult = array("errNo" => $errArray[2]);
         }
         else {
           $JSONresult = array("errNo" => "Request successfuly sent!");
         }
+        $JSONresult["messages"] = array();
         break;
 
       case "getAll":
-        $sql = "SELECT username,location,time_sent,hello_message FROM chatapp.requests JOIN chatapp.users ON(user_id_from = user_id) WHERE user_id_to = ?";
+        $sql = "SELECT user_id,first_name,last_name,location,on_line,imgurl,user_status_id,user_type_id,username,time_sent,hello_message FROM chatapp.requests JOIN chatapp.users ON(user_id_from = user_id) WHERE user_id_to = ? AND accepted IS NULL";
         $stmt = $dbh->prepare($sql);
 
         $JSONarray = array();
@@ -38,12 +39,19 @@
           while($row = $stmt->fetch())
           {
             $jsonrequest = array("username" => $row["username"]);
+            $jsonrequest["user_id"] = $row["user_id"];
+            $jsonrequest["first_name"] = $row["first_name"];
+            $jsonrequest["last_name"] = $row["last_name"];
+            $jsonrequest["location"] = $row["location"];
+            $jsonrequest["on_line"] = $row["on_line"];
+            $jsonrequest["imgUrl"] = $row["imgurl"];
+            $jsonrequest["user_status_id"] = $row["user_status_id"];
+            $jsonrequest["user_type_id"] = $row["user_type_id"];
             $jsonrequest["time_sent"] = $row["time_sent"];
             $jsonrequest["hello_message"] = $row["hello_message"];
-            $jsonrequest["location"] = $row["location"];
             array_push($JSONarray, $jsonrequest);
           }
-          $JSONresult = array("requests" => $JSONarray);
+          $JSONresult = array("users" => $JSONarray);
         }
         break;
 
